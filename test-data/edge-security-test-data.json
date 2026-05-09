@@ -1,0 +1,32 @@
+{
+  "edgeTestCase4": {
+    "testCaseId": "TC_EDGE_004",
+    "moduleName": "Checkout",
+    "description": "Verify checkout with expired debit card",
+    "testData": {
+      "baseUrl": "https://www.amazon.in",
+      "emailEnvKey": "AMAZON_EMAIL",
+      "passwordEnvKey": "AMAZON_PASSWORD",
+      "searchKeyword": "wireless mouse",
+      "cardNumber": "4111111111111111",
+      "expiryMonth": "01",
+      "expiryYear": "2020",
+      "cvv": "123",
+      "paymentErrorPattern": "expired|invalid|not accepted"
+    },
+    "expectedResult": "Show validation/error message for expired card and prevent order placement."
+  },
+  "securedTestCase4": {
+    "testCaseId": "TC_SEC_004",
+    "moduleName": "URL Authorization",
+    "description": "Verify unauthorized access to order history via direct URL",
+    "testData": {
+      "baseUrl": "https://www.amazon.in",
+      "emailEnvKey": "AMAZON_EMAIL",
+      "passwordEnvKey": "AMAZON_PASSWORD",
+      "unauthorizedOrderHistoryUrl": "/gp/your-account/order-history",
+      "expectedRedirectUrlContains": "/signin"
+    },
+    "expectedResult": "Unauthorized users should be redirected to sign-in or shown access denied."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "playwright-js-framework",
+  "version": "1.0.0",
+  "description": "Standard JavaScript Playwright automation framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "javascript",
+    "e2e"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "dotenv": "^16.6.1",
+    "xlsx": "^0.18.5"
+  }
+}
