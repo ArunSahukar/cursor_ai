@@ -7,7 +7,7 @@ const workbook = XLSX.readFile(excelPath);
 const loginSheet = workbook.Sheets[workbook.SheetNames[0]];
 const loginData = XLSX.utils.sheet_to_json(loginSheet, { defval: "" });
 
-test.describe("SauceDemo login using Excel datasets", () => {
+test.describe("SauceDemo login using Excel datasets(10)", () => {
   for (const [index, row] of loginData.entries()) {
     test(`Dataset ${index + 1} - Login check for user: ${row.username || "<blank>"}`, async ({ page }) => {
       const baseUrl = process.env.SAUCEDEMO_BASE_URL || "https://www.saucedemo.com/";
